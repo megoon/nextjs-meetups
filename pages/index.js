@@ -35,7 +35,7 @@ function HomePage(props) {
           content="Add your own meetups and create your own network"
         />
       </Head>
-      <MeetupList meetups={props.meetups} />;
+      <MeetupList meetups={props.meetups} />
     </Fragment>
   );
 }
@@ -57,6 +57,7 @@ export async function getStaticProps() {
         id: meetup._id.toString(),
       })),
     },
+    revalidate: 1,
   };
 }
 export default HomePage;
